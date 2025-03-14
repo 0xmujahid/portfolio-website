@@ -31,10 +31,10 @@ const About = () => {
               I am a passionate MERN Stack and Blockchain Developer with 2 years of experience in building web applications and decentralized solutions. I love turning complex problems into simple, beautiful, and intuitive designs.
             </p>
             <p className="mb-4">
-              My journey in web development started when I was in college, and since then, I've been continuously learning and improving my skills. I specialize in JavaScript, React, Node.js, Express, MongoDB, and various blockchain technologies including Ethereum, Solidity, and Web3.js.
+              My journey in web development started when I was in college, and since then, I&apos;ve been continuously learning and improving my skills. I specialize in JavaScript, React, Node.js, Express, MongoDB, and various blockchain technologies including Ethereum, Solidity, and Web3.js.
             </p>
             <p className="mb-6">
-              When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing my knowledge through technical blogs and community forums.
+              When I&apos;m not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing my knowledge through technical blogs and community forums.
             </p>
             
             <a 
@@ -67,7 +67,7 @@ const About = () => {
               <div className="bg-background p-6 rounded-lg shadow-md">
                 <h4 className="text-xl font-semibold mb-3">Education</h4>
                 <div className="mb-4">
-                  <p className="font-medium">Bachelor's Degree</p>
+                  <p className="font-medium">Bachelor&apos;s Degree</p>
                   <p>Computer Science</p>
                   <p className="text-sm text-gray-500">University Name SZABIST Islamabad Campus (2019-2023)</p>
                 </div>
@@ -84,7 +84,6 @@ const About = () => {
                   <span className="px-3 py-1 bg-primary/10 text-primary rounded-full">Web Development</span>
                   <span className="px-3 py-1 bg-primary/10 text-primary rounded-full">Blockchain</span>
                   <span className="px-3 py-1 bg-primary/10 text-primary rounded-full">Smart Contracts</span>
-                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full">Open Source</span>
                   <span className="px-3 py-1 bg-primary/10 text-primary rounded-full">Cloud Computing</span>
                 </div>
               </div>

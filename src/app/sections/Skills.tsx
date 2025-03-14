@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { 
   FaReact, FaNodeJs, FaDatabase, FaEthereum, 
-  FaHtml5, FaCss3Alt, FaJs, FaGitAlt 
+  FaHtml5, FaJs, FaGitAlt 
 } from 'react-icons/fa';
 import { SiMongodb, SiExpress, SiNextdotjs, SiSolidity, SiWeb3Dotjs, SiTypescript } from 'react-icons/si';
 
@@ -91,7 +91,7 @@ const Skills = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">My Skills</h2>
           <div className="w-20 h-1 bg-primary mx-auto"></div>
           <p className="mt-4 max-w-2xl mx-auto">
-            I've acquired a diverse set of skills throughout my journey as a developer. Here's a comprehensive overview of my technical expertise.
+            I&apos;ve acquired a diverse set of skills throughout my journey as a developer. Here&apos;s a comprehensive overview of my technical expertise.
           </p>
         </motion.div>
 
