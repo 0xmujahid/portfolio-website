@@ -19,13 +19,16 @@ type Project = {
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   const direction = index % 2 === 0 ? 'left' : 'right';
-  const projectAnimation = useScrollAnimation({ direction, delay: 0.2 * (index + 1) });
 
   return (
     <motion.div
       initial={{ opacity: 0, x: direction === 'left' ? -100 : 100 }}
       whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8, delay: 0.2 * (index + 1) }}
+      transition={{ 
+        duration: 0.8, 
+        delay: 0.2 * (index + 1),
+        ease: [0.6, -0.05, 0.01, 0.99]
+      }}
       viewport={{ once: true }}
       className="bg-background rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
     >

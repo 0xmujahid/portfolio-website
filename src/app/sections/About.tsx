@@ -63,7 +63,10 @@ const About = () => {
                 </ul>
               </div>
               
-              <div className="bg-background p-6 rounded-lg shadow-md">
+              <motion.div 
+                {...rightContentAnimation}
+                className="bg-background p-6 rounded-lg shadow-md"
+              >
                 <h4 className="text-xl font-semibold mb-3">Education</h4>
                 <div className="mb-4">
                   <p className="font-medium">Bachelor&apos;s Degree</p>
@@ -75,7 +78,7 @@ const About = () => {
                   <p>Ethereum Blockchain Developer</p>
                   <p className="text-sm text-gray-500">LeranWeb3Dao(2024)</p>
                 </div>
-              </div>
+              </motion.div>
               
               <div className="bg-background p-6 rounded-lg shadow-md md:col-span-2">
                 <h4 className="text-xl font-semibold mb-3">Interests</h4>
