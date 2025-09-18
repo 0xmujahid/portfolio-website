@@ -1,15 +1,22 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { 
   FaReact, FaNodeJs, FaDatabase, FaEthereum, 
   FaHtml5, FaJs, FaGitAlt 
 } from 'react-icons/fa';
 import { SiMongodb, SiExpress, SiNextdotjs, SiSolidity, SiWeb3Dotjs, SiTypescript } from 'react-icons/si';
 
-const SkillBar = ({ name, percentage, icon }: { name: string; percentage: number; icon: React.ReactNode }) => {
+const SkillBar = ({ name, percentage, icon, index }: { name: string; percentage: number; icon: React.ReactNode; index: number }) => {
+  const direction = index % 2 === 0 ? 'left' : 'right';
+  const skillAnimation = useScrollAnimation({ direction, delay: 0.1 * index });
+
   return (
-    <div className="mb-6">
+    <motion.div 
+      className="mb-6"
+      {...skillAnimation}
+    >
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2">
           {icon}
@@ -17,7 +24,7 @@ const SkillBar = ({ name, percentage, icon }: { name: string; percentage: number
         </div>
         <span>{percentage}%</span>
       </div>
-      <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+      <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
         <motion.div 
           className="h-full bg-primary"
           initial={{ width: 0 }}
@@ -26,7 +33,7 @@ const SkillBar = ({ name, percentage, icon }: { name: string; percentage: number
           viewport={{ once: true }}
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -108,7 +115,8 @@ const Skills = () => {
                 key={index} 
                 name={skill.name} 
                 percentage={skill.percentage} 
-                icon={skill.icon} 
+                icon={skill.icon}
+                index={index}
               />
             ))}
           </motion.div>
@@ -125,7 +133,8 @@ const Skills = () => {
                 key={index} 
                 name={skill.name} 
                 percentage={skill.percentage} 
-                icon={skill.icon} 
+                icon={skill.icon}
+                index={index + frontendSkills.length}
               />
             ))}
           </motion.div>
@@ -145,7 +154,8 @@ const Skills = () => {
                 key={index} 
                 name={skill.name} 
                 percentage={skill.percentage} 
-                icon={skill.icon} 
+                icon={skill.icon}
+                index={index + frontendSkills.length + backendSkills.length}
               />
             ))}
           </div>

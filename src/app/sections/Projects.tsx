@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import Image from 'next/image';
 
@@ -16,12 +17,15 @@ type Project = {
   category: 'mern' | 'blockchain' | 'frontend' | 'all';
 };
 
-const ProjectCard = ({ project }: { project: Project }) => {
+const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
+  const direction = index % 2 === 0 ? 'left' : 'right';
+  const projectAnimation = useScrollAnimation({ direction, delay: 0.2 * (index + 1) });
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      initial={{ opacity: 0, x: direction === 'left' ? -100 : 100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 * (index + 1) }}
       viewport={{ once: true }}
       className="bg-background rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
     >
@@ -201,8 +205,8 @@ const Projects = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+          {filteredProjects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
       </div>

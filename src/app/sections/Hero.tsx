@@ -7,25 +7,44 @@ import { FiArrowRight, FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center pt-20 pb-16">
+    <section id="home" className="min-h-screen flex items-center pt-20 pb-16 bg-background transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <motion.div 
             className="md:w-1/2 mb-10 md:mb-0"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ 
+              duration: 0.8,
+              type: "spring",
+              stiffness: 100
+            }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              <span className="block">Hi, I&apos;m</span>
+            <motion.h1 
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+            >
+              <span className="block text-foreground">Hi, I&apos;m</span>
               <span className="text-primary block">Mujahid Ali</span>
-            </h1>
-            <h2 className="text-2xl md:text-3xl font-semibold mb-6">
-              MERN Stack & Blockchain Developer
-            </h2>
-            <p className="text-lg mb-8 max-w-lg">
-              I specialize in building modern web applications using the MERN stack and developing blockchain solutions. With 2 years of experience, I create scalable and efficient applications that solve real-world problems.
-            </p>
+            </motion.h1>
+            <motion.h2 
+              className="text-2xl md:text-3xl font-semibold mb-6 text-foreground/80"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+            >
+              Full Stack Ai & Blockchain Developer
+            </motion.h2>
+            <motion.p 
+              className="text-lg mb-8 max-w-lg text-muted-foreground"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+            >
+              I specialize in building modern web applications using the MERN stack  & Ai  developing blockchain solutions. With 5 years of experience, I create scalable and efficient applications that solve real-world problems.
+            </motion.p>
             
             <div className="flex flex-wrap gap-4">
               <Link 
