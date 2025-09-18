@@ -13,7 +13,10 @@ const About = () => {
     <section id="about" className="py-20 bg-background/5">
       <div className="container mx-auto px-4">
         <motion.div
-          {...titleAnimation}
+          ref={titleAnimation.ref}
+          initial={titleAnimation.initial}
+          animate={titleAnimation.animate}
+          variants={titleAnimation.variants}
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
@@ -23,7 +26,10 @@ const About = () => {
         <div className="flex flex-col md:flex-row gap-10 items-center">
           <motion.div 
             className="md:w-1/2"
-            {...leftContentAnimation}
+            ref={leftContentAnimation.ref}
+            initial={leftContentAnimation.initial}
+            animate={leftContentAnimation.animate}
+            variants={leftContentAnimation.variants}
           >
             <h3 className="text-2xl font-semibold mb-4">Who am I?</h3>
             <p className="mb-4">
