@@ -34,10 +34,6 @@ export default function RootLayout({
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body className="antialiased bg-white dark:bg-gray-900 transition-colors duration-300">
         <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
         >
           {children}
         </ThemeProvider>
